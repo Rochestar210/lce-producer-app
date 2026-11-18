@@ -1,0 +1,58 @@
+
+/* Navbar container */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid #e2e8f0;
+  z-index: 1000;
+}
+
+/* Navigation items container */
+.navbar-container {
+  max-width: 448px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+/* Navigation links */
+.navbar-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  padding: 8px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #64748b;
+  transition: 0.2s ease;
+}
+
+/* Hover effect */
+.navbar-link:hover {
+  background-color: #f8fafc;
+}
+
+/* Active link */
+.navbar-link.active {
+  color: #15803d;
+  background-color: #f0fdf4;
+}
+
+/* Icons */
+.navbar-link svg {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 4px;
+}
+
+/* Labels */
+.navbar-link span {
+  font-size: 10px;
+  font-weight: 500;
+}

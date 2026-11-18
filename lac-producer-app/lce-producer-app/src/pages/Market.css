@@ -1,0 +1,43 @@
+/* Market page */
+.market-container { max-width: 600px; margin: 0 auto; padding: 4px 0 25px; color: #1e293b; text-align: left; }
+
+.market-header {
+  background: linear-gradient(135deg, #166534, #15803d);
+  color: #fff; padding: 22px; border-radius: 20px; margin-bottom: 16px;
+  box-shadow: 0 8px 20px rgba(22, 101, 52, 0.15);
+}
+.market-header h2 { font-size: 24px; font-weight: 800; margin: 0 0 8px; }
+.market-header p { font-size: 14px; line-height: 1.6; margin: 0; color: #dcfce7; }
+
+.market-search {
+  position: relative; margin-bottom: 14px;
+}
+.market-search svg {
+  position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+  width: 18px; height: 18px; color: #94a3b8; pointer-events: none;
+}
+.market-search input {
+  width: 100%; box-sizing: border-box; padding: 13px 14px 13px 42px;
+  border: 1px solid #cbd5e1; border-radius: 14px; background: #fff;
+  font-size: 14px; outline: none;
+}
+.market-search input:focus { border-color: #16a34a; box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12); }
+
+.market-tabs {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
+  background: #e2e8f0; padding: 5px; border-radius: 16px; margin-bottom: 16px;
+}
+.market-tab {
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  padding: 11px 8px; border: none; border-radius: 12px; background: transparent;
+  color: #475569; font-size: 14px; font-weight: 700; cursor: pointer; font-family: inherit;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+}
+.market-tab svg { width: 18px; height: 18px; }
+.market-tab-sale.active { background: #15803d; color: #fff; box-shadow: 0 3px 8px rgba(21, 128, 61, 0.3); }
+.market-tab-buyers.active { background: #15803d; color: #fff; box-shadow: 0 3px 8px rgba(21, 128, 61, 0.3); }
+.market-count {
+  min-width: 22px; padding: 1px 7px; border-radius: 999px; font-size: 12px;
+  background: rgba(100, 116, 139, 0.2);
+}
+.market-tab.active .market-count { background: rgba(255, 255, 255, 0.3); }

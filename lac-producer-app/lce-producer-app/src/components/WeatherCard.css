@@ -1,0 +1,188 @@
+
+.weather-card {
+  background: linear-gradient(135deg, #166534, #15803d);
+  color: white;
+  padding: 24px;
+  border-radius: 22px;
+  box-shadow: 0 8px 20px rgba(22, 101, 52, 0.15);
+  margin-bottom: 20px;
+}
+
+.weather-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.weather-temperature {
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.weather-description {
+  font-size: 15px;
+  text-transform: capitalize;
+  color: #dcfce7;
+  margin-top: 2px;
+}
+
+.weather-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.weather-item {
+  background: rgba(255, 255, 255, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 14px;
+  border-radius: 14px;
+}
+
+.weather-item p:first-child {
+  font-size: 12px;
+  color: #dcfce7;
+  margin-bottom: 6px;
+}
+
+.weather-item p:last-child {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.weather-loading,
+.weather-error {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+  color: #64748b;
+}
+
+.weather-error {
+  color: #dc2626;
+}
+
+@media (max-width: 380px) {
+  .weather-card {
+    padding: 18px;
+  }
+
+  .weather-temperature {
+    font-size: 40px;
+  }
+}
+/* --- 5-Day Forecast Styles --- */
+.forecast-container {
+  background: white;
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+  border: 1px solid #f1f5f9;
+}
+
+.forecast-title {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #1e293b;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.forecast-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.forecast-item {
+  flex-shrink: 0;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 16px;
+  padding: 12px;
+  width: 80px;
+  text-align: center;
+}
+
+.forecast-day {
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.forecast-temp {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-top: 4px;
+}
+
+/* --- 6-Month Seasonal Guide Styles --- */
+.seasonal-container {
+  background: white;
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f1f5f9;
+}
+
+.seasonal-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 16px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.seasonal-icon {
+  font-size: 24px;
+}
+
+.seasonal-details {
+  flex: 1;
+}
+
+.seasonal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.seasonal-month {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 15px;
+}
+
+.seasonal-weather-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: #15803d;
+  background: #dcfce7;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.seasonal-advice {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+.forecast-item .text-2xl {
+  font-size: 24px;
+  line-height: 2rem;
+}

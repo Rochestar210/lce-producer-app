@@ -1,0 +1,58 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Marketplace: anyone can read and post. A post can be removed (sold) but not edited.
+    match /listings/{id} {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasOnly(
+          ['name','quantity','pricePerKg','seller','phone','createdAt'])
+        && request.resource.data.name is string && request.resource.data.name.size() < 60
+        && request.resource.data.pricePerKg is number
+        && request.resource.data.pricePerKg > 0 && request.resource.data.pricePerKg < 10000
+        && request.resource.data.quantity is number && request.resource.data.quantity > 0;
+      allow update: if false;
+      allow delete: if true;
+    }
+
+    // Buyer requests: anyone can read and post. Total must equal quantity x price.
+    // A request can be removed once the buyer has found what they need.
+    match /buyerOrders/{id} {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasOnly(
+          ['name','quality','quantity','pricePerKg','totalAmount','neededDate','buyer','phone','createdAt'])
+        && request.resource.data.name is string && request.resource.data.name.size() < 60
+        && request.resource.data.quality in ['A','B','C']
+        && request.resource.data.quantity is number && request.resource.data.quantity > 0
+        && request.resource.data.pricePerKg is number
+        && request.resource.data.pricePerKg > 0 && request.resource.data.pricePerKg < 10000
+        && math.abs(request.resource.data.totalAmount
+             - request.resource.data.quantity * request.resource.data.pricePerKg) < 0.01
+        && request.resource.data.neededDate is string
+        && request.resource.data.buyer is string && request.resource.data.buyer.size() < 80
+        && request.resource.data.phone is string && request.resource.data.phone.size() < 30;
+      allow update: if false;
+      allow delete: if true;
+    }
+
+    // Alert subscriptions: a phone can register / update / remove its own token.
+    // Nobody can read the list of tokens from the app.
+    match /subscribers/{token} {
+      allow create, update: if request.resource.data.keys().hasOnly(
+          ['token','district','crops','lang','produce','updatedAt'])
+        && request.resource.data.token == token
+        && request.resource.data.district is string
+        && request.resource.data.crops is list && request.resource.data.crops.size() <= 20
+        && request.resource.data.lang in ['en','st']
+        && (!('produce' in request.resource.data)
+            || (request.resource.data.produce is list && request.resource.data.produce.size() <= 20));
+      allow delete: if true;
+      allow read: if false;
+    }
+
+    // Internal bookkeeping for the alert function (server only)
+    match /alertState/{doc} {
+      allow read, write: if false;
+    }
+  }
+}

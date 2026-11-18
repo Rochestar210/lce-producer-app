@@ -1,0 +1,78 @@
+/* Market cards (sellers + buyers) */
+.mk-list { display: flex; flex-direction: column; gap: 14px; }
+.mk-empty {
+  text-align: center; color: #64748b; font-size: 14px;
+  background: #fff; border: 1px dashed #cbd5e1; border-radius: 16px; padding: 28px 16px; margin: 0;
+}
+
+.mk-card {
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 18px;
+  padding: 18px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+  border-left: 6px solid #15803d; text-align: left;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.mk-card:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08); }
+.mk-card-buy { border-left-color: #15803d; }
+
+.mk-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.mk-name { margin: 0; font-size: 20px; font-weight: 800; color: #166534; text-transform: capitalize; }
+.mk-card-buy .mk-name { color: #166534; }
+.mk-price { font-size: 22px; font-weight: 800; color: #15803d; }
+.mk-price small { font-size: 13px; font-weight: 600; color: #64748b; }
+
+.mk-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.mk-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #f1f5f9; color: #475569; font-size: 12px; font-weight: 600;
+  padding: 5px 10px; border-radius: 999px;
+}
+.mk-chip svg { width: 14px; height: 14px; }
+.mk-chip-green { background: #dcfce7; color: #166534; }
+
+.mk-grade { font-size: 12px; font-weight: 800; padding: 4px 11px; border-radius: 999px; white-space: nowrap; }
+.mk-grade-A { background: #dcfce7; color: #166534; }
+.mk-grade-B { background: #fef9c3; color: #854d0e; }
+.mk-grade-C { background: #ffedd5; color: #9a3412; }
+
+.mk-buy-total {
+  background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 14px;
+  padding: 10px 14px; margin-top: 12px; display: flex; flex-direction: column;
+}
+.mk-buy-total span { font-size: 12px; font-weight: 600; color: #166534; }
+.mk-buy-total strong { font-size: 24px; font-weight: 800; color: #166534; }
+.mk-buy-total small { font-size: 12px; color: #64748b; }
+
+.mk-person {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 4px;
+  margin: 12px 0 0; font-size: 13px; color: #64748b;
+}
+.mk-person svg { width: 14px; height: 14px; }
+.mk-date { color: #94a3b8; }
+
+.mk-wa {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin-top: 14px; padding: 12px; border-radius: 12px;
+  color: #fff; text-decoration: none; font-size: 14px; font-weight: 700;
+  transition: background 0.2s;
+}
+.mk-wa svg { width: 18px; height: 18px; }
+.mk-wa-green { background: #16a34a; }
+.mk-wa-green:hover { background: #15803d; }
+
+/* "Sold" / "Found it" button (only on your own posts) */
+.mk-remove {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; box-sizing: border-box; margin-top: 10px; padding: 11px;
+  border-radius: 12px; border: 1.5px solid #15803d; background: #fff;
+  color: #166534; font-size: 14px; font-weight: 700; font-family: inherit; cursor: pointer;
+  transition: background 0.2s;
+}
+.mk-remove svg { width: 17px; height: 17px; }
+.mk-remove:hover:not(:disabled) { background: #f0fdf4; }
+.mk-remove:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* WhatsApp + Call side by side */
+.mk-contact { display: flex; gap: 10px; margin-top: 14px; }
+.mk-contact .mk-wa { flex: 1; margin-top: 0; min-width: 0; }
+.mk-wa-call { background: #fff; color: #166534; border: 2px solid #15803d; box-sizing: border-box; }
+.mk-wa-call:hover { background: #f0fdf4; }

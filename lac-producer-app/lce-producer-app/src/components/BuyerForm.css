@@ -1,0 +1,42 @@
+.bf-card { width: 100%; text-align: left; }
+.bf-heading { margin-bottom: 22px; }
+.bf-heading h2 { color: #166534; font-size: 22px; font-weight: 800; margin: 0 0 8px; }
+.bf-heading p { color: #64748b; font-size: 14px; line-height: 1.6; margin: 0; }
+
+.bf-success {
+  display: flex; flex-direction: column; gap: 6px;
+  background: #dcfce7; color: #166534; border: 1px solid #bbf7d0;
+  padding: 13px; border-radius: 10px; font-size: 14px; font-weight: 600; margin-bottom: 18px;
+}
+.bf-success a { color: #166534; font-weight: 700; text-decoration: none; }
+
+.bf-form { display: flex; flex-direction: column; gap: 18px; }
+.bf-form label {
+  display: flex; flex-direction: column; gap: 7px;
+  color: #334155; font-size: 14px; font-weight: 600;
+}
+.bf-form input, .bf-form select {
+  width: 100%; box-sizing: border-box;
+  padding: 13px; border: 1px solid #cbd5e1; border-radius: 10px;
+  background: #f8fafc; font-size: 14px; outline: none; font-weight: 400;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.bf-form input:focus, .bf-form select:focus {
+  border-color: #15803d; box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.14); background: #fff;
+}
+.bf-two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.bf-total {
+  background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 14px;
+  padding: 14px 16px; display: flex; flex-direction: column; gap: 2px;
+}
+.bf-total span { color: #166534; font-size: 13px; font-weight: 600; }
+.bf-total strong { color: #166534; font-size: 28px; font-weight: 800; }
+.bf-total small { color: #64748b; font-size: 12px; }
+
+.bf-submit {
+  width: 100%; padding: 14px; background: #15803d; color: #fff; border: none;
+  border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; transition: background 0.2s;
+}
+.bf-submit:hover:not(:disabled) { background: #166534; }
+.bf-submit:disabled { background: #86b998; cursor: not-allowed; }

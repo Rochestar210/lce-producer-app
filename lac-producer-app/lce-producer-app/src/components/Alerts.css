@@ -1,0 +1,63 @@
+/* Location picker + alert settings cards */
+.al-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  text-align: left;
+}
+.al-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #166534;
+  font-weight: 800;
+  font-size: 17px;
+}
+.al-title svg { width: 20px; height: 20px; flex-shrink: 0; }
+.al-text { color: #475569; font-size: 14px; line-height: 1.6; margin: 8px 0 0; }
+.al-note { color: #64748b; font-size: 13px; margin: 6px 0 0; }
+
+.al-row { display: flex; gap: 8px; margin-top: 12px; }
+.al-select {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  background: #f8fafc;
+  font-size: 14px;
+}
+
+.al-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.al-btn svg { width: 16px; height: 16px; }
+.al-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.al-btn-primary { background: #15803d; color: #fff; }
+.al-btn-primary:hover:not(:disabled) { background: #166534; }
+.al-btn-soft { background: #f0fdf4; color: #166534; }
+.al-btn-gray { background: #f1f5f9; color: #334155; }
+.al-btn-outline { background: #fff; color: #166534; border-color: #15803d; }
+
+.al-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.al-warn {
+  background: #fffbeb;
+  color: #b45309;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 13px;
+  margin-top: 12px;
+}
